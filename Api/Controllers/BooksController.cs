@@ -21,20 +21,5 @@ public class BooksController(MyDbContext context) : ControllerBase
     {
         return Ok(context.Books.Add(book).Context.SaveChanges());
     }
-
-    [HttpDelete("{id}")]
-    [Route("DeleteBook/{id}")]
-    public ActionResult DeleteBook(int id)
-    {
-        var book =  context.Books.Find(id);
-        if (book == null)
-        {
-            return NotFound();
-        }
-
-        context.Books.Remove(book);
-        context.SaveChangesAsync();
-
-        return NoContent();
-    }
+    
 }

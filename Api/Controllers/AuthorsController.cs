@@ -25,20 +25,6 @@ public class AuthorsController(MyDbContext context) : ControllerBase
         return Ok(context.Authors.Add(author).Context.SaveChanges());
     }
 
-    [HttpDelete("{id}")]
-    [Route("DeleteAuthor/{id}")]
-    public ActionResult DeleteAuthor(int id)
-    {
-        var author =  context.Authors.Find(id);
-        if (author == null)
-        {
-            return NotFound();
-        }
-
-        context.Authors.Remove(author);
-        context.SaveChangesAsync();
-
-        return NoContent();
-    }
+    
     
 }
