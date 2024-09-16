@@ -35,7 +35,7 @@ public class MyDbContext : DbContext
     {
         public int authorid { get; set; }
         public string authorname { get; set; }
-        public int numbeerofbooks { get; set; }
+        public int numberofbooks { get; set; }
         public string country { get; set; }
         
     }

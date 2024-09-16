@@ -7,7 +7,7 @@ import toast, { Toaster } from 'solid-toast';
 
 interface Book {
     id: number;
-    bookName: string;
+    bookname: string;
     numberofpages: number;
     description: string;
 }
@@ -139,7 +139,7 @@ function BookList() {
                     {books.map((book) => (
                         <li key={book.id}>
                             <div>
-                                <strong>{book.bookName}</strong>
+                                <p>{book.bookname}</p>
                                 <p>{book.description}</p>
                                 <p>Pages: {book.numberofpages}</p>
                                 <button onClick={() => EditBook(book)}>Edit</button>
